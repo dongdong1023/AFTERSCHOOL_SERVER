@@ -1,0 +1,113 @@
+.all-bg{
+	width: 100%;
+	height:100%;
+	position:absolute;
+	background: url(../../image/after/bg-killsContrast.png) no-repeat;
+}
+
+.ct-people{
+    position: absolute;
+ 	width: 570px;
+    height: 477px;
+    left: 265px;
+    top: 337px;
+}
+
+.t-people{
+    position: absolute;
+    width: 570px;
+    height: 477px;
+    left: 1088px;
+    top: 337px;
+}
+
+.ct-info{
+	width:605px;
+	height: 69px;
+	margin-bottom: 29px;
+}
+
+.t-info{
+	width:605px;
+	height: 69px;
+	margin-bottom: 29px;
+}
+
+
+#dreamIcon-ct{
+	position: relative;
+    top: 10px;
+    left: -100px;
+}
+
+#dreamIcon-t{
+    position: relative;
+    left: 1340px;
+    top: 10px;
+}
+
+#t-dreamIcon {
+	width: 400px;
+	height: 343px;
+	position: relative;
+	left: 1269px;
+	overflow: hidden;
+	bottom: 415px;
+}
+
+#dreamIcon-t {
+	width: 500px;
+	height: 500px;
+	opacity: 0.7;
+	left: 0px;
+}
+
+#ct-dreamIcon {
+	width: 400px;
+	overflow: hidden;
+	position: relative;
+	height: 343px;
+	left: 251px;
+	bottom: 72px;
+}
+
+#dreamIcon-ct {
+	width: 500px;
+	height: 500px;
+	opacity: 0.7;
+}
+
+.name{
+	width: 398px;
+    height: 69px;
+    font-size: 40px;
+    color: white;
+    font-weight: 600;
+    overflow: hidden;
+    text-align: right;
+    line-height: 70px;
+    word-break: break-all;
+    white-space: nowrap;
+}
+
+#t-name{
+	text-align: left;
+	margin-left: 178px;
+}
+
+#t-kills{
+	margin-left: 0px;
+}
+
+.kills{
+    width: 138px;
+    height: 83px;
+    margin-top: -77px;
+    margin-left: 419px;
+    font-size: 50px;
+    color: white;
+    font-weight: 600;
+    overflow: hidden;
+    line-height: 85px;
+    text-align: center;
+}

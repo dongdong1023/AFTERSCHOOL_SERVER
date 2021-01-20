@@ -1,0 +1,135 @@
+.all-bg{
+	width: 100%;
+	height:100%;
+	position:absolute;
+	background: url(../../image/after/bg-bestPlayer.png) no-repeat;
+}
+
+
+.ct-people{
+	position: absolute;
+    width: 678px;
+    height: 890px;
+    left: 163px;
+    top: 188px;
+}
+
+.t-people{
+    position: absolute;
+    width: 678px;
+    height: 890px;
+    left: 1094px;
+    top: 188px;
+}
+
+
+.t-info{
+	position: absolute;
+    left: 185px;
+}
+
+.picture{
+    position: absolute;
+    width: 455px;
+    height: 690px;
+    left: -65px;
+    top: -17px;
+}
+
+#t-picture{
+	left: 55px;
+}
+
+.dream{
+	position: absolute;
+	width: 325px;
+	height: 65px;
+	left: 35px;
+    top: 382px;
+}
+
+.name{
+    position: absolute;
+    width: 660px;
+    height: 80px;
+    left: -164px;
+    top: 673px;
+    font-size: 57px;
+    color: #e4e1dc;
+    font-weight: 600;
+    text-align: center;
+    line-height: 73px;
+    overflow: hidden;
+    word-break: break-all;
+    white-space: nowrap;
+}
+
+.dream-name{
+	width: 660px;
+    height: 43px;
+    color: #656a6d;
+    font-size: 37px;
+    position: relative;
+    line-height: 33px;
+    overflow: hidden;
+    word-break: break-all;
+    white-space: nowrap;
+    top: 756px;
+    text-align: center;
+}
+
+#ct-dream-name{
+	 left: -164px;
+}
+
+#t-dream-name {
+	left: -19px;
+}
+
+.datas{
+    position: absolute;
+    width: 155px;
+    text-align: center;
+    height: 495px;
+    top: 132px;
+}
+
+.ct-datas{
+    left: 515px;
+}
+
+
+.data-num{
+    position: absolute;
+    width: 151px;
+    height: 90px;
+    font-size: 35px;
+    color: white;
+    font-weight: 600;
+    line-height: 100px;
+    overflow: hidden;
+}
+
+.kills{
+    
+}
+
+#t-name{
+	left: -19px;
+}
+
+.deaths{
+	top: 100px;
+}
+
+.assists{
+	top:200px;
+}
+
+.adr{
+	top:300px;
+}
+
+.rating{
+	top:400px;
+}
