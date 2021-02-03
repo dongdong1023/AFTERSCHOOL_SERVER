@@ -1,7 +1,7 @@
 package com.wx.base.dao;
 
-import imba.game.base.dao.support.IBaseDao;
-import imba.game.base.entity.system.SystemLog;
+import com.wx.base.dao.support.IBaseDao;
+import com.wx.base.entity.system.SystemLog;
 import org.springframework.stereotype.Repository;
 
 @Repository

@@ -4,8 +4,8 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Repository;
 
-import imba.game.base.dao.support.IBaseDao;
-import imba.game.base.entity.admin.User;
+import com.wx.base.dao.support.IBaseDao;
+import com.wx.base.entity.admin.User;
 
 @Repository
 public interface IUserDao extends IBaseDao<User, Integer> {

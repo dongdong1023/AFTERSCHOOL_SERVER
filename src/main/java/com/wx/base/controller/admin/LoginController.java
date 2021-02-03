@@ -1,8 +1,8 @@
 package com.wx.base.controller.admin;
 
-import imba.game.base.config.annotation.Log;
-import imba.game.base.controller.BaseController;
-import imba.game.base.entity.system.SystemLog;
+import com.wx.base.config.annotation.Log;
+import com.wx.base.controller.BaseController;
+import com.wx.base.entity.system.SystemLog;
 import io.swagger.annotations.Api;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationException;

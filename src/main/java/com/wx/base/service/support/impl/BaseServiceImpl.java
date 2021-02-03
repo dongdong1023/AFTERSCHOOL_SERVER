@@ -6,9 +6,9 @@ import java.util.List;
 
 import javax.transaction.Transactional;
 
-import imba.game.base.dao.support.IBaseDao;
-import imba.game.base.entity.support.BaseEntity;
-import imba.game.base.service.support.IBaseService;
+import com.wx.base.dao.support.IBaseDao;
+import com.wx.base.entity.support.BaseEntity;
+import com.wx.base.service.support.IBaseService;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

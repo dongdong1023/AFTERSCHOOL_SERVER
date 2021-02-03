@@ -491,18 +491,35 @@ public class DateUtils {
     return null;
  
   }
- 
-  public static long getAgeByBirthday(String date){
- 
+
+  public static long getAgeByBirthday(String date) {
+
     Date birthday = stringToDate(date, "yyyy-MM-dd");
     long sec = new Date().getTime() - birthday.getTime();
- 
-    long age = sec/(1000*60*60*24)/365;
- 
+
+    long age = sec / (1000 * 60 * 60 * 24) / 365;
+
     return age;
   }
- 
- 
+
+
+  /*
+   * 将时间戳转换为时间
+   */
+  public static Date stampToDate(long time) {
+    SimpleDateFormat df = new SimpleDateFormat(DATE_TIME_FORMAT);
+    String time_Date = df.format(new Date(time * 1000L));
+    Date date = new Date();
+    try {
+      date = df.parse(time_Date);
+    } catch (ParseException e) {
+      e.printStackTrace();
+    }
+
+    return date;
+  }
+
+
   /**
    * @param args
    */
@@ -514,7 +531,6 @@ public class DateUtils {
  
     long s=DateUtils.getDayByMinusDate("2012-01-01", "2012-12-31");
     System.err.println(s);
- 
  
   }
 }

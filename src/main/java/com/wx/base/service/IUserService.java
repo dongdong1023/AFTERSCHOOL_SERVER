@@ -3,8 +3,8 @@ package com.wx.base.service;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 
-import imba.game.base.entity.admin.User;
-import imba.game.base.service.support.IBaseService;
+import com.wx.base.entity.admin.User;
+import com.wx.base.service.support.IBaseService;
 
 /**
  * <p>

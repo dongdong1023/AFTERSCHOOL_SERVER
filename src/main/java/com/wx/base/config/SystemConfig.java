@@ -1,7 +1,7 @@
 package com.wx.base.config;
 
-import imba.game.base.common.utils.CharUtils;
-import imba.game.base.common.utils.FileNameUtils;
+import com.wx.base.common.utils.CharUtils;
+import com.wx.base.common.utils.FileNameUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
@@ -41,9 +41,6 @@ public class SystemConfig {
     @Value("${backup.dir}")
     private String backupFilePath;
 
-    @Value("${game.token}")
-    private String token;
-
     public String getPicPath() {
         return picPath;
     }
@@ -69,7 +66,7 @@ public class SystemConfig {
 
     public String getPatternPath() throws IOException {
         try {
-            return imba.game.base.common.utils.FileUtils.getInstance().getFileByPath(resourceFilePath + CharUtils.BACKSLASH + "patterns").getPath();
+            return com.wx.base.common.utils.FileUtils.getInstance().getFileByPath(resourceFilePath + CharUtils.BACKSLASH + "patterns").getPath();
         } catch (Exception e) {
             return null;
         }
@@ -114,13 +111,5 @@ public class SystemConfig {
      */
     public String getBackupFilePath() {
         return resourceFilePath + CharUtils.BACKSLASH + backupFilePath + CharUtils.BACKSLASH;
-    }
-
-    public String getToken() {
-        return token;
-    }
-
-    public void setToken(String token) {
-        this.token = token;
     }
 }

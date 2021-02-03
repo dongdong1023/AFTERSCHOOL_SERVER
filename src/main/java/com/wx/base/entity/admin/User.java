@@ -17,7 +17,7 @@ import javax.persistence.Table;
 
 import com.alibaba.fastjson.annotation.JSONField;
 
-import imba.game.base.entity.support.BaseEntity;
+import com.wx.base.entity.support.BaseEntity;
 
 /**
  * <p>

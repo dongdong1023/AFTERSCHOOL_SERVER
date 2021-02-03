@@ -1,6 +1,6 @@
 package com.wx.base.entity.system;
 
-import imba.game.base.entity.support.BaseEntity;
+import com.wx.base.entity.support.BaseEntity;
 
 import javax.persistence.*;
 import java.util.Date;

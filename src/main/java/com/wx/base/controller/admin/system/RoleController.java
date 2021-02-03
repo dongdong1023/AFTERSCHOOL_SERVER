@@ -1,7 +1,7 @@
 package com.wx.base.controller.admin.system;
 
-import imba.game.base.config.annotation.Log;
-import imba.game.base.entity.system.SystemLog;
+import com.wx.base.config.annotation.Log;
+import com.wx.base.entity.system.SystemLog;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
@@ -12,10 +12,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import imba.game.base.common.JsonResult;
-import imba.game.base.controller.BaseController;
-import imba.game.base.entity.admin.Role;
-import imba.game.base.service.IRoleService;
+import com.wx.base.common.JsonResult;
+import com.wx.base.controller.BaseController;
+import com.wx.base.entity.admin.Role;
+import com.wx.base.service.IRoleService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 

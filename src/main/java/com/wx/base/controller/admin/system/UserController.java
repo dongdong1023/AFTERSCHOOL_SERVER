@@ -1,15 +1,15 @@
 package com.wx.base.controller.admin.system;
 
-import imba.game.base.common.JsonResult;
-import imba.game.base.common.utils.CharUtils;
-import imba.game.base.config.annotation.Log;
-import imba.game.base.controller.BaseController;
-import imba.game.base.entity.admin.Role;
-import imba.game.base.entity.admin.User;
-import imba.game.base.entity.system.SystemLog;
-import imba.game.base.service.IRoleService;
-import imba.game.base.service.IUserService;
-import imba.game.base.vo.UserVO;
+import com.wx.base.common.JsonResult;
+import com.wx.base.common.utils.CharUtils;
+import com.wx.base.config.annotation.Log;
+import com.wx.base.controller.BaseController;
+import com.wx.base.entity.admin.Role;
+import com.wx.base.entity.admin.User;
+import com.wx.base.entity.system.SystemLog;
+import com.wx.base.service.IRoleService;
+import com.wx.base.service.IUserService;
+import com.wx.base.vo.UserVO;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.apache.commons.lang3.StringUtils;

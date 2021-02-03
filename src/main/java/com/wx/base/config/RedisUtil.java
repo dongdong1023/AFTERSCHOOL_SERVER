@@ -1,6 +1,7 @@
 package com.wx.base.config;
 
-import imba.game.base.common.Constats;
+import com.alibaba.fastjson.JSONObject;
+import com.wx.base.common.Constats;
 import org.apache.commons.lang3.math.NumberUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -99,6 +100,22 @@ public class RedisUtil {
      */
     public Object get(String key) {
         return key == null ? null : redisTemplate.opsForValue().get(key);
+    }
+
+    /**
+     * 根据Key返回实体类
+     *
+     * @param key
+     * @param clazz
+     * @param <T>
+     * @return
+     */
+    public <T> T getEntity(String key, Class<T> clazz) {
+        try {
+            return JSONObject.parseObject(get(key).toString(), clazz);
+        } catch (Exception e) {
+            return null;
+        }
     }
 
     /**
@@ -600,36 +617,4 @@ public class RedisUtil {
         }
     }
 
-    /**
-     * 删除所有Redis用户信息
-     */
-//    public void delAllMember() {
-//        try {
-//            Set<String> keys = this.getKeys(Constats.REDIS_CSGO_MEMBER_KEY);
-//            if (keys != null && keys.size() > 0) {
-//                this.del(keys);
-//            }
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//            return;
-//        }
-//    }
-
-    /**
-     * 初始化比赛信息
-     */
-    public void initMatch() {
-        //1.删除Redis比赛暂停状态
-        this.del(Constats.REDIS_5E_SERVER_PAUSE_KEY);
-        //2.初始化战队暂停次数
-        this.set(Constats.PAUSE_KEY + Score.T_TEAM, 4);
-        this.set(Constats.PAUSE_KEY + Score.CT_TEAM, 4);
-        //3.删除当前局的存活玩家，胜利方缓存信息
-        this.del(Constats.ROUND_ALIVE_PLAYERS_KEY);
-        this.del(Constats.ROUND_WINNER_TEAM_KEY);
-        //4.初始化实时回合
-        this.set(Constats.LIVING_ROUND_KEY,0);
-        //5.删除上回合数据
-        this.del(Constats.REDIS_CSGO_SERVER_DATAS_LAST_KEY);
-    }
 }

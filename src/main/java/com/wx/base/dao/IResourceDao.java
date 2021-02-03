@@ -1,7 +1,7 @@
 package com.wx.base.dao;
 
-import imba.game.base.dao.support.IBaseDao;
-import imba.game.base.entity.admin.Resource;
+import com.wx.base.dao.support.IBaseDao;
+import com.wx.base.entity.admin.Resource;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.Modifying;

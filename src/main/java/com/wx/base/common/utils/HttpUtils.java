@@ -58,7 +58,7 @@ public class HttpUtils {
             Map<String, List<String>> map = connection.getHeaderFields();
             // 遍历所有的响应头字段
             for (String key : map.keySet()) {
-            	log.info(key + "--->" + map.get(key));
+                log.debug(key + "--->" + map.get(key));
             }
             // 定义 BufferedReader输入流来读取URL的响应
             in = new BufferedReader(new InputStreamReader(
@@ -176,8 +176,8 @@ public class HttpUtils {
         }catch(Exception ex){  
             ex.printStackTrace();  
             log.error("发送 POST 请求出现异常！"+ex);
-        }  
-        log.info("返回结果:\n"+result);
+        }
+        log.debug("返回结果:\n" + result);
         return result;  
     }  
     

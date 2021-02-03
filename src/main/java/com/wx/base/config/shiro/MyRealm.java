@@ -19,11 +19,11 @@ import org.apache.shiro.subject.PrincipalCollection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import imba.game.base.common.utils.MD5Utils;
-import imba.game.base.entity.admin.Resource;
-import imba.game.base.entity.admin.Role;
-import imba.game.base.entity.admin.User;
-import imba.game.base.service.IUserService;
+import com.wx.base.common.utils.MD5Utils;
+import com.wx.base.entity.admin.Resource;
+import com.wx.base.entity.admin.Role;
+import com.wx.base.entity.admin.User;
+import com.wx.base.service.IUserService;
 
 /**
  * @author IMBA

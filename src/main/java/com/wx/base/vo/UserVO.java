@@ -1,7 +1,7 @@
 package com.wx.base.vo;
 
-import imba.game.base.entity.admin.Role;
-import imba.game.base.entity.admin.User;
+import com.wx.base.entity.admin.Role;
+import com.wx.base.entity.admin.User;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.util.Date;

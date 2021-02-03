@@ -1,7 +1,7 @@
 package com.wx.base.service;
 
-import imba.game.base.entity.system.SystemLog;
-import imba.game.base.service.support.IBaseService;
+import com.wx.base.entity.system.SystemLog;
+import com.wx.base.service.support.IBaseService;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 

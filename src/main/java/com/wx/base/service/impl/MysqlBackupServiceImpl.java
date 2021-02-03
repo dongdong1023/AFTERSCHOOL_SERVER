@@ -1,11 +1,11 @@
 package com.wx.base.service.impl;
 
-import imba.game.base.common.Constats;
-import imba.game.base.common.DateEditor;
-import imba.game.base.common.utils.AssertUtils;
-import imba.game.base.common.utils.FileUtils;
-import imba.game.base.config.SystemConfig;
-import imba.game.base.service.IMysqlBackupService;
+import com.wx.base.common.Constats;
+import com.wx.base.common.DateEditor;
+import com.wx.base.common.utils.AssertUtils;
+import com.wx.base.common.utils.FileUtils;
+import com.wx.base.config.SystemConfig;
+import com.wx.base.service.IMysqlBackupService;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

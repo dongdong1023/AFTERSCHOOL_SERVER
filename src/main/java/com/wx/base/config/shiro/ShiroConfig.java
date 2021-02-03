@@ -18,7 +18,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.DependsOn;
 import org.springframework.context.annotation.Import;
 
-import imba.game.base.service.IResourceService;
+import com.wx.base.service.IResourceService;
 
 @Configuration
 @Import(ShiroManager.class)
@@ -68,8 +68,8 @@ public class ShiroConfig {
 
         filterChainDefinitionMap.put("/admin/login", "anon");
 
-        List<imba.game.base.entity.admin.Resource> list = resourceService.findAll();
-        for (imba.game.base.entity.admin.Resource resource : list) {
+        List<com.wx.base.entity.admin.Resource> list = resourceService.findAll();
+        for (com.wx.base.entity.admin.Resource resource : list) {
             filterChainDefinitionMap.put(resource.getSourceUrl(), "perms[" + resource.getSourceKey() + "]");
         }
 

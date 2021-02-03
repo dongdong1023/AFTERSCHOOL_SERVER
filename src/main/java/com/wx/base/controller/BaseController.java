@@ -1,11 +1,11 @@
 package com.wx.base.controller;
 
-import imba.game.base.common.DateEditor;
-import imba.game.base.common.utils.CharUtils;
-import imba.game.base.common.utils.DateUtils;
-import imba.game.base.common.utils.IpUtils;
-import imba.game.base.common.utils.MultipartFileUtils;
-import imba.game.base.config.SystemConfig;
+import com.wx.base.common.DateEditor;
+import com.wx.base.common.utils.CharUtils;
+import com.wx.base.common.utils.DateUtils;
+import com.wx.base.common.utils.IpUtils;
+import com.wx.base.common.utils.MultipartFileUtils;
+import com.wx.base.config.SystemConfig;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.BeanWrapper;
@@ -196,8 +196,8 @@ public class BaseController {
 	 */
 	protected File getPicturePath(String path) {
 		try {
-			return imba.game.base.common.utils.FileUtils.getInstance().getFileByPath(systemConfig.getPicFullPath(path));
-		} catch (Exception e) {
+            return com.wx.base.common.utils.FileUtils.getInstance().getFileByPath(systemConfig.getPicFullPath(path));
+        } catch (Exception e) {
 			return null;
 		}
 	}

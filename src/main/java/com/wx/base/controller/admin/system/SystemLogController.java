@@ -1,11 +1,11 @@
 package com.wx.base.controller.admin.system;
 
-import imba.game.base.config.annotation.Log;
-import imba.game.base.controller.BaseController;
-import imba.game.base.entity.admin.User;
-import imba.game.base.entity.system.SystemLog;
-import imba.game.base.service.ISystemLogService;
-import imba.game.base.service.IUserService;
+import com.wx.base.config.annotation.Log;
+import com.wx.base.controller.BaseController;
+import com.wx.base.entity.admin.User;
+import com.wx.base.entity.system.SystemLog;
+import com.wx.base.service.ISystemLogService;
+import com.wx.base.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;

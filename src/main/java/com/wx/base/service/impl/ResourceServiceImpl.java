@@ -1,15 +1,15 @@
 package com.wx.base.service.impl;
 
-import imba.game.base.common.Constats;
-import imba.game.base.common.utils.AssertUtils;
-import imba.game.base.dao.IResourceDao;
-import imba.game.base.dao.support.IBaseDao;
-import imba.game.base.entity.admin.Resource;
-import imba.game.base.entity.admin.Role;
-import imba.game.base.service.IResourceService;
-import imba.game.base.service.IRoleService;
-import imba.game.base.service.support.impl.BaseServiceImpl;
-import imba.game.base.vo.ZtreeView;
+import com.wx.base.common.Constats;
+import com.wx.base.common.utils.AssertUtils;
+import com.wx.base.dao.IResourceDao;
+import com.wx.base.dao.support.IBaseDao;
+import com.wx.base.entity.admin.Resource;
+import com.wx.base.entity.admin.Role;
+import com.wx.base.service.IResourceService;
+import com.wx.base.service.IRoleService;
+import com.wx.base.service.support.impl.BaseServiceImpl;
+import com.wx.base.vo.ZtreeView;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;

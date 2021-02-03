@@ -1,8 +1,8 @@
 package com.wx.base.service;
 
-import imba.game.base.entity.admin.Resource;
-import imba.game.base.service.support.IBaseService;
-import imba.game.base.vo.ZtreeView;
+import com.wx.base.entity.admin.Resource;
+import com.wx.base.service.support.IBaseService;
+import com.wx.base.vo.ZtreeView;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 

@@ -1,7 +1,7 @@
 package com.wx.base.service.task;
 
-import imba.game.base.common.JsonResult;
-import imba.game.base.controller.admin.system.MySqlBackupController;
+import com.wx.base.common.JsonResult;
+import com.wx.base.controller.admin.system.MySqlBackupController;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

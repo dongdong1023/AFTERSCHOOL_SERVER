@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.querydsl.QueryDslPredicateExecutor;
 import org.springframework.data.repository.NoRepositoryBean;
 
-import imba.game.base.entity.support.BaseEntity;
+import com.wx.base.entity.support.BaseEntity;
 
 @NoRepositoryBean
 public interface IBaseDao<T extends BaseEntity, ID extends Serializable>

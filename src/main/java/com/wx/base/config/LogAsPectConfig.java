@@ -2,11 +2,11 @@ package com.wx.base.config;
 
 
 import com.alibaba.fastjson.JSONObject;
-import imba.game.base.common.utils.IpUtils;
-import imba.game.base.config.annotation.Log;
-import imba.game.base.entity.admin.User;
-import imba.game.base.entity.system.SystemLog;
-import imba.game.base.service.ISystemLogService;
+import com.wx.base.common.utils.IpUtils;
+import com.wx.base.config.annotation.Log;
+import com.wx.base.entity.admin.User;
+import com.wx.base.entity.system.SystemLog;
+import com.wx.base.service.ISystemLogService;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.shiro.SecurityUtils;
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -35,7 +35,7 @@ public class LogAsPectConfig {
     private ISystemLogService systemLogService;
 
     //表示匹配带有自定义注解的方法
-    @Pointcut("@annotation(imba.game.base.config.annotation.Log)")
+    @Pointcut("@annotation(com.wx.base.config.annotation.Log)")
     public void pointcut() {}
 
     @Around("pointcut()")

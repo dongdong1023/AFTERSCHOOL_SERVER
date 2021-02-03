@@ -5,7 +5,7 @@ import javax.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 
-import imba.game.base.config.shiro.freemarker.ShiroTags;
+import com.wx.base.config.shiro.freemarker.ShiroTags;
 
 @Configuration
 public class FreeMarkerConfig {

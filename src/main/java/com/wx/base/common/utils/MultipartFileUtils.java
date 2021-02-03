@@ -25,9 +25,9 @@ public class MultipartFileUtils {
 
 	public boolean save(MultipartFile multipartFile, String dest) {
 		try {
-			File file = imba.game.base.common.utils.FileUtils.getInstance().getFileByPath(dest);
-			return save(multipartFile, file);
-		} catch (Exception e) {
+            File file = com.wx.base.common.utils.FileUtils.getInstance().getFileByPath(dest);
+            return save(multipartFile, file);
+        } catch (Exception e) {
 			logger.error(e.getMessage(), e);
 			return false;
 		}

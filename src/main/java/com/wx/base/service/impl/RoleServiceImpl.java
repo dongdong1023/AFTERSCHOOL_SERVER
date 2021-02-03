@@ -12,14 +12,14 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
 
-import imba.game.base.common.Constats;
-import imba.game.base.dao.IRoleDao;
-import imba.game.base.dao.support.IBaseDao;
-import imba.game.base.entity.admin.Resource;
-import imba.game.base.entity.admin.Role;
-import imba.game.base.service.IResourceService;
-import imba.game.base.service.IRoleService;
-import imba.game.base.service.support.impl.BaseServiceImpl;
+import com.wx.base.common.Constats;
+import com.wx.base.dao.IRoleDao;
+import com.wx.base.dao.support.IBaseDao;
+import com.wx.base.entity.admin.Resource;
+import com.wx.base.entity.admin.Role;
+import com.wx.base.service.IResourceService;
+import com.wx.base.service.IRoleService;
+import com.wx.base.service.support.impl.BaseServiceImpl;
 
 /**
  * <p>

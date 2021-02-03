@@ -3,7 +3,7 @@ package com.wx.base.config;
 import java.util.ArrayList;
 import java.util.List;
 
-import imba.game.base.common.utils.CharUtils;
+import com.wx.base.common.utils.CharUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
@@ -19,7 +19,7 @@ import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.alibaba.fastjson.support.config.FastJsonConfig;
 import com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter4;
 
-import imba.game.base.config.interceptor.CommonInterceptor;
+import com.wx.base.config.interceptor.CommonInterceptor;
 
 @Configuration
 public class WebMvcConfig extends WebMvcConfigurerAdapter {

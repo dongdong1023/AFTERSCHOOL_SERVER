@@ -211,17 +211,17 @@ public class FileNameUtils {
 	}
 
 	public static String getFileContent(String path) throws Exception {
-		File file = imba.game.base.common.utils.FileUtils.getInstance().getFileByPath(path);
-		if (!file.exists() || file.isDirectory()) {
-			return null;
-		}
-		try {
-			FileInputStream in = new FileInputStream(file);
-			byte[] bytes = new byte[1024];
-			StringBuffer sb = new StringBuffer();
-			while (in.read(bytes) != -1) {
-				sb.append(new String(bytes));
-				bytes = new byte[1024];
+        File file = com.wx.base.common.utils.FileUtils.getInstance().getFileByPath(path);
+        if (!file.exists() || file.isDirectory()) {
+            return null;
+        }
+        try {
+            FileInputStream in = new FileInputStream(file);
+            byte[] bytes = new byte[1024];
+            StringBuffer sb = new StringBuffer();
+            while (in.read(bytes) != -1) {
+                sb.append(new String(bytes));
+                bytes = new byte[1024];
 			}
 			in.close();
 			return sb.toString();
