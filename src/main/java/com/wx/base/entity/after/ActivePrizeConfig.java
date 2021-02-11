@@ -67,19 +67,19 @@ public class ActivePrizeConfig extends BaseEntity {
     /**
      * 0 没中奖    1 实体奖品   2 积分   3.票券--> TYPE
      */
-    @Column(name = "type")
+    @Column(name = "`type`")
     private Integer type;
 
     /**
      * 1可用    0不可用 --> STATUS
      */
-    @Column(name = "status")
+    @Column(name = "`status`")
     private Integer status;
 
     /**
      * 描述 --> DESCRIBE
      */
-    @Column(name = "describe", length = 521)
+    @Column(name = "`describe", length = 521)
     private String describe;
 
     /**

@@ -1,6 +1,5 @@
 package com.wx.base.controller.afterSchool;
 
-import com.alibaba.fastjson.JSONObject;
 import com.wx.base.common.JsonResult;
 import com.wx.base.config.annotation.Log;
 import com.wx.base.controller.BaseController;
@@ -13,9 +12,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * 预约、抽奖记录
@@ -40,8 +39,8 @@ public class ActivePrizeController extends BaseController {
      */
     @Log(value = "登记座位预约用户信息", action = SystemLog.LOG_ACTION_INSERT)
     @ApiOperation(value = "登记座位预约用户信息", notes = "获取Redis缓存库比分信息")
-    @RequestMapping(value = {"/register/${openId}"}, method = RequestMethod.POST)
-    public JsonResult register(AfterUserInfo userInfo, String activeCode, String prizeCode) {
+    @RequestMapping(value = {"/register/{openId}"}, method = RequestMethod.POST)
+    public JsonResult register(AfterUserInfo userInfo, @PathVariable String openId, String activeCode, String prizeCode) {
         JsonResult jsonResult = JsonResult.success();
         try {
             activePrizeService.registerInfo(userInfo, activeCode, prizeCode);

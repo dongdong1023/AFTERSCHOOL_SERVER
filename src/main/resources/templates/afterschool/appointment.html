@@ -6,10 +6,10 @@
     <title>赛事预约</title>
 </head>
 <link href="/assets/plugins/weui/css/weui.min.css" rel="stylesheet">
-<link href="/assets/plugins/weui/css/example.css" rel="stylesheet">
 <link href="/assets/plugins/bootstarp/css/bootstrap.min.css" rel="stylesheet">
 <script src="/assets/plugins/jquery/jquery.min.js"></script>
 <script src="/assets/plugins/weui/js/weui.min.js" type="text/javascript"></script>
+<script src="/assets/plugins/weui/js/zepto.min.js" type="text/javascript"></script>
 <script src="/assets/plugins/weui/js/picker.city.js" type="text/javascript"></script>
 <style>
     .user_info {
@@ -45,7 +45,7 @@
         </div>
     </div>
     <div class="weui-cells__title">请填写个人信息</div>
-    <div class="weui-cells weui-cells_form">
+    <div class="weui-cells weui-cells_form" id="form">
         <div class="weui-cell">
             <div class="weui-cell__hd"><label class="weui-label">姓名</label></div>
             <div class="weui-cell__bd">
@@ -77,7 +77,7 @@
             </div>
         </div>
 
-        <div class="weui-cells weui-cells_form">
+        <div class="weui-cells">
             <div class="weui-cell">
                 <div class="weui-cell__hd"><label class="weui-label" for="home-city">所在城市</label></div>
                 <div class="weui-cell__bd">
@@ -86,8 +86,13 @@
             </div>
         </div>
 
+        <div class="weui-cell weui-cell_active weui-cell_access weui-cell_select weui-cell_select-after">
+            <div class="weui-cell__hd"><label class="weui-label">座位类型</label></div>
+            <div class="weui-cell__bd" id="showPicker">观众席座位</div>
+        </div>
+        <br/><br/>
         <div class="weui-form__opr-area">
-            <a class="weui-btn weui-btn_primary" href="javascript:">提交信息</a>
+            <a class="weui-btn weui-btn_primary" href="javascript:" onclick="sumbit()">提交信息</a>
         </div>
 
     </div>
@@ -97,13 +102,57 @@
 </body>
 
 <script>
-    /*城市标签*/
-    $("#home-city").cityPicker({
-        title: "选择目的地",
-        showDistrict: false,
-        onChange: function (picker, values, displayValues) {
-            console.log(values, displayValues);
-        }
+    function sumbit() {
+        weui.confirm('请确定填写信息准确无误', {
+            title: '提交预约信息',
+            buttons: [{
+                label: '确定',
+                type: 'primary',
+                onClick: function () {
+                    console.log('确定');
+                }
+            }, {
+                label: '取消',
+                type: 'default',
+                onClick: function () {
+                    console.log('取消')
+                }
+            }]
+        });
+    }
+
+
+    $('#showPicker').on('click', function () {
+        weui.picker([{
+            label: '观众席座位',
+            disabled: true,
+            value: 0
+        }, {
+            label: '1楼座位',
+            value: 1
+        }, {
+            label: '2楼座位',
+            value: 2
+        }, {
+            label: '3楼座位',
+            value: 3
+        }, {
+            label: '4楼座位',
+            value: 4
+        }], {
+            className: 'showPicker',
+            container: 'body',
+            defaultValue: [0],
+            onChange: function (result) {
+                //console.log(result);
+            },
+            onConfirm: function (result) {
+                console.log(result);
+                $("#showPicker").text(result[0].label);
+            },
+            id: "showPicker",
+            title: '请选择座位类型'
+        });
     });
 </script>
 </html>
