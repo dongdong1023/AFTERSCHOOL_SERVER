@@ -3,9 +3,9 @@ package com.wx.base.controller.afterSchool;
 import com.wx.base.common.JsonResult;
 import com.wx.base.config.annotation.Log;
 import com.wx.base.controller.BaseController;
-import com.wx.base.entity.after.AfterUserInfo;
 import com.wx.base.entity.system.SystemLog;
 import com.wx.base.service.IActivePrizeService;
+import com.wx.base.vo.AfterUserInfoVO;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.slf4j.Logger;
@@ -15,6 +15,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  * 预约、抽奖记录
@@ -40,10 +41,10 @@ public class ActivePrizeController extends BaseController {
     @Log(value = "登记座位预约用户信息", action = SystemLog.LOG_ACTION_INSERT)
     @ApiOperation(value = "登记座位预约用户信息", notes = "获取Redis缓存库比分信息")
     @RequestMapping(value = {"/register/{openId}"}, method = RequestMethod.POST)
-    public JsonResult register(AfterUserInfo userInfo, @PathVariable String openId, String activeCode, String prizeCode) {
+    public JsonResult register(@RequestParam("userInfo") AfterUserInfoVO userInfo, @PathVariable String openId) {
         JsonResult jsonResult = JsonResult.success();
         try {
-            activePrizeService.registerInfo(userInfo, activeCode, prizeCode);
+            activePrizeService.registerInfo(userInfo);
             return jsonResult;
         } catch (Exception e) {
             log.error("登记座位预约用户信息出现异常:" + e.toString(), e);

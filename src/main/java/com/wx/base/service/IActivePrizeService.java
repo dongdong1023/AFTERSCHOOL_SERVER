@@ -1,8 +1,8 @@
 package com.wx.base.service;
 
 import com.wx.base.entity.after.ActivePrize;
-import com.wx.base.entity.after.AfterUserInfo;
 import com.wx.base.service.support.IBaseService;
+import com.wx.base.vo.AfterUserInfoVO;
 
 public interface IActivePrizeService extends IBaseService<ActivePrize, Integer> {
 
@@ -11,5 +11,5 @@ public interface IActivePrizeService extends IBaseService<ActivePrize, Integer> 
      *
      * @param userInfo
      */
-    void registerInfo(AfterUserInfo userInfo, String activeCode, String prizeCode);
+    void registerInfo(AfterUserInfoVO userInfo);
 }

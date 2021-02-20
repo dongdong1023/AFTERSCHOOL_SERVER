@@ -3,7 +3,6 @@ package com.wx.base.service.impl;
 import com.wx.base.common.Constats;
 import com.wx.base.common.utils.AssertUtils;
 import com.wx.base.common.utils.RegexUtil;
-import com.wx.base.config.RedisUtil;
 import com.wx.base.dao.IActivePrizeDao;
 import com.wx.base.dao.support.IBaseDao;
 import com.wx.base.entity.after.Active;
@@ -12,6 +11,7 @@ import com.wx.base.entity.after.ActivePrizeConfig;
 import com.wx.base.entity.after.AfterUserInfo;
 import com.wx.base.service.IActivePrizeService;
 import com.wx.base.service.support.impl.BaseServiceImpl;
+import com.wx.base.vo.AfterUserInfoVO;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -40,12 +40,14 @@ public class ActivePrizeServiceImpl extends BaseServiceImpl<ActivePrize, Integer
     private ActivePrizeConfigServiceImpl activePrizeConfigServiceImpl;
 
     @Override
-    public void registerInfo(AfterUserInfo userInfo, String activeCode, String prizeCode) {
+    public void registerInfo(AfterUserInfoVO userInfoVo) {
         //1.信息校验
-        AssertUtils.isNull(userInfo, Constats.RESULE_USER_ISNULL_ERROR);
+        AssertUtils.isNull(userInfoVo, Constats.RESULE_USER_ISNULL_ERROR);
+        String activeCode = userInfoVo.getActiveCode();
+        String prizeCode = userInfoVo.getPrizeCode();
         AssertUtils.isTrue(StringUtils.isBlank(activeCode) || StringUtils.isBlank(prizeCode), "请求繁忙,请重新进入预约");
         Date nowDate = new Date();
-        userInfo = userInfoServiceImpl.getAfterUserInfoByOpenid(userInfo.getOpenid());
+        AfterUserInfo userInfo = userInfoServiceImpl.getAfterUserInfoByOpenid(userInfoVo.getOpenid());
         //参与人员验证
         AssertUtils.isTrue((userInfo != null && userInfo.getSubscribe() != 0), "预约失败,请关注【AfterSchool都市学园】后继续预约");
         //身份证、手机号、姓名验证
