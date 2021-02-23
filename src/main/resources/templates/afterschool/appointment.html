@@ -2,18 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta content="width=device-width,initial-scale=1,user-scalable=0,viewport-fit=cover" name="viewport">
+    <meta content="width=device-width,initial-scale=1,user-scalable=0" name="viewport">
     <title>赛事预约</title>
 </head>
 <link href="/assets/plugins/weui/css/weui.min.css" rel="stylesheet">
 <link href="/assets/plugins/bootstarp/css/bootstrap.min.css" rel="stylesheet">
-<link href="/assets/plugins/weui/css/weuix.css" rel="stylesheet">
+
 <script src="/assets/plugins/jquery/jquery.min.js"></script>
 <script src="/assets/plugins/weui/js/weui.min.js" type="text/javascript"></script>
 <!--城市选择器-->
 <script src="/assets/plugins/weui/js/picker.city.js" type="text/javascript"></script>
 <script src="/assets/plugins/weui/js/zepto.weui.js" type="text/javascript"></script>
 <style>
+    body::-webkit-scrollbar {
+        display: none;
+    }
+
     .user_info {
         background-color: #576b95;
         height: 21%;
@@ -40,12 +44,14 @@
         <div class="img_info">
             <img class="img-circle" src="${user.headimgurl}">
         </div>
-        <div style="margin-top: 10%;">
-            <label class="text_info">微信名：${user.nickname}</label>
+        <div style="position: absolute;top: 44px;left: 153px;">
+            <label class="text_info">微信名：${user.nickname}</label><br/>
+            <a href="javascript:void(0)" onclick="explain()" style="color: #ececec;">预约规则</a><br/>
             <label class="text_info" hidden="hidden" id="openId">${user.openid}</label>
             <label class="text_info" hidden="hidden" id="activeCode">${activeCode}</label>
         </div>
     </div>
+    <div class="weui-cells__title">观赛地：上海市闵行区吴中路1588号爱琴海购物公园B1层</div>
     <div class="weui-cells__title">请填写个人信息</div>
     <div class="weui-cells weui-cells_form" id="form">
         <div class="weui-cell">
@@ -79,11 +85,11 @@
         <div class="weui-cell">
             <div class="weui-cell__hd"><label class="weui-label" for="homeCity">所在城市</label></div>
             <div class="weui-cell__bd">
-                <input class="weui-input" id="homeCity" readonly type="text" value="陕西省 汉中市 勉县">
+                <input class="weui-input" id="homeCity" type="text" value="">
             </div>
         </div>
 
-        <div class="weui-cell weui-cell_active weui-cell_access weui-cell_select weui-cell_select-after">
+        <div class="weui-cell weui_cell_select">
             <div class="weui-cell__hd"><label class="weui-label">座位类型</label></div>
             <div class="weui-cell__bd" id="showPicker">观众席座位</div>
             <div class="weui-cell__bd" hidden="hidden" id="showPicker_val">prize_00001</div>
@@ -92,7 +98,7 @@
         <div class="weui-form__opr-area">
             <a class="weui-btn weui-btn_primary" href="javascript:" onclick="sumbit()">提交信息</a>
         </div>
-
+        <br/><br/>
     </div>
     <!-- <input type="tel" class="weui_input" required pattern="[0-9]{11}" placeholder="输入你现在的手机号" emptyTips="请输入手机号" notMatchTips="请输入正确的手机号">
      <input type="text" required pattern="REG_IDNUM" placeholder="输入你的身份证号码" emptyTips="请输入身份证号码" notMatchTips="请输入正确的身份证号码">-->
@@ -100,6 +106,30 @@
 </body>
 
 <script>
+
+    $(function () {
+        explain();
+    });
+
+    /*规则提示*/
+    function explain() {
+        //地址：上海市闵行区吴中路1588号爱琴海购物公园B1层
+        var text = '1.【实名证件登记】在规定时间内完成<span style="color: red">信息登记</span>，即可参与<span style="color: red">资格摇号</span>，并非先到先得<br/>2.【系统摇号】登记结束后,系统将进行摇号处理，对中奖观众将以公众号(AfterSchool都市学园)消息通知以及客服专员会电话联系确定名单<br/>3.【凭证入座】比赛日当天工作人员现场通过身份证以及公众号通知消息入座凭证';
+        text += '<br/><span style="color: red">Tips：</span>对于没有抽中入座权的观众也不要灰心，比赛日当天同样也享有现场观赛权，我们将在舞台周边设置观赛台来一起体验现场赛事和<span style="color: red">多重优惠券</span>作为补偿；对于持有入座权观众在电话确认过后比赛日未到现场者，将人工记录系统，后续赛事入座权将作为<span style="color: red">差信誉用户</span>对待';
+        weui.alert(text, {
+            title: '预约规则',
+            buttons: [{
+                label: '我知道了',
+                type: 'primary',
+                onClick: function () {
+                    console.log('ok')
+                }
+            }]
+        });
+
+    }
+
+
     /*是否同行*/
     var voteDouble = false;
 
@@ -160,14 +190,6 @@
     }
 
 
-    /*城市选择器*/
-    $("#homeCity").cityPicker({
-        title: "选择出发地",
-        onChange: function (picker, values, displayValues) {
-            console.log(values, displayValues);
-        }
-    });
-
     /*通行人数*/
     $('.weui-switch').on('change', function () {
         var on = $(this).is(':checked');
@@ -178,31 +200,5 @@
         }
     });
 
-
-    /*席位选择器*/
-    $('#showPicker').on('click', function () {
-        weui.picker([{
-            label: '观众席座位',
-            disabled: true,
-            value: 'prize_00001'
-        }, {
-            label: '畅饮观众席',
-            value: 'prize_00002'
-        }], {
-            className: 'showPicker',
-            container: 'body',
-            defaultValue: [0],
-            onChange: function (result) {
-                //console.log(result);
-            },
-            onConfirm: function (result) {
-                console.log(result);
-                $("#showPicker").text(result[0].label);
-                $("#showPicker_val").text(result[0].value);
-            },
-            id: "showPicker",
-            title: '请选择座位类型'
-        });
-    });
 </script>
 </html>
