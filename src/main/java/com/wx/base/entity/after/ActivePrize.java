@@ -29,6 +29,13 @@ public class ActivePrize extends BaseEntity {
     @Column(name = "unionid", length = 128)
     private String unionid;          //只有在用户将公众号绑定到微信开放平台帐号后，才会出现该字段。
 
+
+    /**
+     * 活动CODE --> ACTIVITY_CODE
+     */
+    @Column(name = "activityCode", length = 128)
+    private String activityCode;
+
     /**
      * 奖品code --> PRIZE_CODE
      */
@@ -145,4 +152,11 @@ public class ActivePrize extends BaseEntity {
         this.reserve2 = reserve2;
     }
 
+    public String getActivityCode() {
+        return activityCode;
+    }
+
+    public void setActivityCode(String activityCode) {
+        this.activityCode = activityCode;
+    }
 }

@@ -43,6 +43,7 @@
         <div style="margin-top: 10%;">
             <label class="text_info">微信名：${user.nickname}</label>
             <label class="text_info" hidden="hidden" id="openId">${user.openid}</label>
+            <label class="text_info" hidden="hidden" id="activeCode">${activeCode}</label>
         </div>
     </div>
     <div class="weui-cells__title">请填写个人信息</div>
@@ -85,7 +86,7 @@
         <div class="weui-cell weui-cell_active weui-cell_access weui-cell_select weui-cell_select-after">
             <div class="weui-cell__hd"><label class="weui-label">座位类型</label></div>
             <div class="weui-cell__bd" id="showPicker">观众席座位</div>
-            <div class="weui-cell__bd" hidden="hidden" id="showPicker_val">0</div>
+            <div class="weui-cell__bd" hidden="hidden" id="showPicker_val">prize_00001</div>
         </div>
         <br/><br/>
         <div class="weui-form__opr-area">
@@ -103,7 +104,7 @@
     var voteDouble = false;
 
     function sumbit() {
-        weui.confirm('请确定填写信息准确无误', {
+        var confirm = weui.confirm('请确定填写信息准确无误', {
             title: '提交预约信息',
             buttons: [{
                 label: '确定',
@@ -127,21 +128,26 @@
                     userInfo.idCard = idCard;
                     userInfo.telNum = tel;
                     userInfo.openId = openId;
-                    userInfo.openId = openId;
                     userInfo.activeCode = activeCode;
                     userInfo.prizeCode = showPicker;
                     $.ajax({
-                        method: "post",
+                        method: "GET",
                         dataType: "json",
                         data: userInfo,
                         contentType: "application/json;charset=utf-8",
-                        url: '${ctx!}/prize/register/' + openId,
+                        url: '${ctx!}/prize/register',
                         async: false,
                         success: function (data) {
-
+                            console.log(data);
+                            if (data.code == 0) {
+                                window.location.href = "${ctx!}/prize/success";
+                            } else {
+                                confirm.hide(function () {
+                                    weui.alert(data.message);
+                                });
+                            }
                         }
                     });
-                    console.log(showPicker);
                 }
             }, {
                 label: '取消',
@@ -178,10 +184,10 @@
         weui.picker([{
             label: '观众席座位',
             disabled: true,
-            value: 0
+            value: 'prize_00001'
         }, {
             label: '畅饮观众席',
-            value: 1
+            value: 'prize_00002'
         }], {
             className: 'showPicker',
             container: 'body',

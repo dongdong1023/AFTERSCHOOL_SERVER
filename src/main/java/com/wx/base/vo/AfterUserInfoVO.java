@@ -1,25 +1,53 @@
 package com.wx.base.vo;
 
-import com.wx.base.entity.after.AfterUserInfo;
-
 /**
  * @author 东东
  * @date 2021/2/20 16:28
  */
 public class AfterUserInfoVO {
 
-    private AfterUserInfo userInfo;
+    private String realname;
+
+    private String idCard;
+
+    private String telNum;
+
+    private String openId;
 
     private String activeCode;
 
     private String prizeCode;
 
-    public AfterUserInfo getUserInfo() {
-        return userInfo;
+    public String getRealname() {
+        return realname;
     }
 
-    public void setUserInfo(AfterUserInfo userInfo) {
-        this.userInfo = userInfo;
+    public void setRealname(String realname) {
+        this.realname = realname;
+    }
+
+    public String getIdCard() {
+        return idCard;
+    }
+
+    public void setIdCard(String idCard) {
+        this.idCard = idCard;
+    }
+
+    public String getTelNum() {
+        return telNum;
+    }
+
+    public void setTelNum(String telNum) {
+        this.telNum = telNum;
+    }
+
+    public String getOpenId() {
+        return openId;
+    }
+
+    public void setOpenId(String openId) {
+        this.openId = openId;
     }
 
     public String getActiveCode() {
@@ -37,21 +65,4 @@ public class AfterUserInfoVO {
     public void setPrizeCode(String prizeCode) {
         this.prizeCode = prizeCode;
     }
-
-    public String getOpenid() {
-        return userInfo.getOpenid();
-    }
-
-    public void setOpenid(String openid) {
-        this.userInfo.setOpenid(openid);
-    }
-
-    public String getNickname() {
-        return userInfo.getNickname();
-    }
-
-    public void setNickname(String nickname) {
-        this.userInfo.setNickname(nickname);
-    }
-
 }

@@ -12,10 +12,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * 预约、抽奖记录
@@ -40,8 +39,9 @@ public class ActivePrizeController extends BaseController {
      */
     @Log(value = "登记座位预约用户信息", action = SystemLog.LOG_ACTION_INSERT)
     @ApiOperation(value = "登记座位预约用户信息", notes = "获取Redis缓存库比分信息")
-    @RequestMapping(value = {"/register/{openId}"}, method = RequestMethod.POST)
-    public JsonResult register(@RequestParam("userInfo") AfterUserInfoVO userInfo, @PathVariable String openId) {
+    @RequestMapping(value = {"/register"}, method = RequestMethod.GET)
+    @ResponseBody
+    public JsonResult register(AfterUserInfoVO userInfo) {
         JsonResult jsonResult = JsonResult.success();
         try {
             activePrizeService.registerInfo(userInfo);

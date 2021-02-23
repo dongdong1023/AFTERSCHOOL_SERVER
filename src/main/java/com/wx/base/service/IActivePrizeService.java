@@ -7,6 +7,13 @@ import com.wx.base.vo.AfterUserInfoVO;
 public interface IActivePrizeService extends IBaseService<ActivePrize, Integer> {
 
     /**
+     * @param activeCode
+     * @param openid
+     * @return
+     */
+    String checkUrl(String activeCode, String openid);
+
+    /**
      * 登记赛事座位预约
      *
      * @param userInfo
